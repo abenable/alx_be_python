@@ -9,7 +9,7 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice: ")
+        choice = int(input("Enter your choice: "))
 
         if choice == '1':
             # Prompt for and add an item
@@ -23,7 +23,12 @@ def main():
                 print(f"{item} not found in the list")
         elif choice == '3':
             # Display the shopping list
-            print(shopping_list)
+            if shopping_list:
+                print("Shopping List:")
+                for item in shopping_list:
+                    print(f"- {item}")
+            else:
+                print("The shopping list is empty.")
         elif choice == '4':
             print("Goodbye!")
             break
